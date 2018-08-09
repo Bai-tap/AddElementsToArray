@@ -10,7 +10,6 @@ public class AddElementToArray {
         int x = sc.nextInt();
         System.out.println("Nhập vào vị trí cần chèn (từ 0 - 9): ");
         int index = sc.nextInt();
-        int temp = 0;
 
         if (index <= 1 && index >= array.length - 1)
             System.out.println("Không chèn được phần tử zô mảng");
@@ -18,13 +17,13 @@ public class AddElementToArray {
         for (int j = 0; j < array.length - 1; j++) {
             if (j < index - 1) {
                 array[j] = array[j];
-            } else if (j >= index-1) {
+            } else if (j >= index - 1) {
 
-                temp = array[j];
-                array[index-1]=x;
+                int temp = array[j];
+                array[j] = x;
                 array[j + 1] = temp;
             }
-            System.out.println(array[j]);
+            System.out.print(array[j] + "\t");
         }
     }
 }
